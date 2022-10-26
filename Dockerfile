@@ -9,7 +9,7 @@ RUN docker-php-ext-install pdo mbstring
 WORKDIR /app
 COPY . /app
 
-RUN composer install 
+
 
 EXPOSE 8000
 CMD php bin/console server:run 0.0.0.0:8000
