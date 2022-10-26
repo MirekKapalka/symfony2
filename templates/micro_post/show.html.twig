@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}One Post - {{ post.title }}{% endblock %}
+
+{% block body %}
+<h1>Show One Post Page of MicroPost Webiste</h1>
+        <h3>
+        {{  post.title }} 
+        </h3>
+
+        <div>
+        {{ post.text }}
+        </div>
+        <div>
+
+        {% if date(post.created)>date('-1month') %}
+            <div style="color:red;">made recent {{post.created|date('Y-M-d/H:m:s')}}</div>    
+        {% elseif date(post.created)<date('-1month') and date(post.created)>date('-1year') %}
+            <div style="color:blue;">older then 1 month {{post.created|date('Y-M-d/H:m:s')}}</div>
+        {% else %}    
+           <div style="color:grey;">older then 1 year {{post.created|date('Y-M-d/H:m:s')}}</div>
+        {% endif %}
+        
+        </div>
+        
+        
+        
+        
+
+{% endblock %}

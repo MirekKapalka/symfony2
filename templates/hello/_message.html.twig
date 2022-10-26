@@ -1,0 +1,21 @@
+        
+        
+        
+        
+        {% if date(message.created)>date('-1month') %}
+            <div style="color:red;">made recent {{message.created}}</div>    
+        {% elseif date(message.created)<date('-1month') and date(message.created)>date('-1year') %}
+            <div style="color:blue;">older then 1 month {{message.created}}</div>
+        {% else %}    
+           <div style="color:grey;">older then 1 year {{message.created}}</div>
+        {% endif %}
+
+
+
+        {% if date(post.created)>date('-1month') %}
+            <div style="color:red;">made recent {{post.created}}</div>    
+        {% elseif date(post.created)<date('-1month') and date(post.created)>date('-1year') %}
+            <div style="color:blue;">older then 1 month {{post.created}}</div>
+        {% else %}    
+           <div style="color:grey;">older then 1 year {{post.created}}</div>
+        {% endif %}

@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %} 
+{% block body %}
+    <div>
+
+        <h2>New List of size {{limit}}</h2>
+
+      
+
+    </div>
+    <div>
+
+    {% if slices|length>0 %}
+        {% for message in slices|slice(0, limit) %}
+           <ul>
+           <li>{{message.message}}
+
+        {% include "hello/_message.html.twig" %}
+           </li> 
+           </ul>
+           
+        {% endfor %}
+    {% else %}
+        There is nothing yet
+    {% endif %}
+
+    </div>
+{% endblock %}
